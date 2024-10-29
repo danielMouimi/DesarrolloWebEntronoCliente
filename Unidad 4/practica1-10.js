@@ -1,8 +1,10 @@
-let imagen = document.getElementsByTagName("img")[0];
+let imagen1 = document.getElementsByTagName("img");
 let movimiento = false;
 let desplazamientoX = 0;
 let desplazamientoY = 0;
 
+
+function mover(imagen) {
 imagen.style.position = "absolute";
 
 imagen.addEventListener("mousedown", (e)=> 
@@ -26,3 +28,8 @@ imagen.addEventListener("mouseup", ()=>movimiento = false);
 imagen.ondragstart = function() {
     return false;
   };
+}
+
+for (img of imagen1) {
+    mover(img);
+}
