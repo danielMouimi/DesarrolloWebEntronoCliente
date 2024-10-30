@@ -1,53 +1,78 @@
 window.onload = () => 
 {
-    const ganador = aleatorio()
+    let dificil = true;
+    let cuadrados = inicio(dificil);
+    let mensaje = document.getElementById("mensage");
+    cuadradoGanador = inicioJuego(dificil,cuadrados);
+
+    document.getElementById("facil").addEventListener("click", ()=> {
+        dificil = false;
+        cuadradoGanador = inicioJuego(dificil,cuadrados);
+        eventosCuadrado(cuadrados,cuadradoGanador);
+        mensaje.innerText = ("");
+    });
+
+    document.getElementById("dificil").addEventListener("click", ()=> {
+        dificil = true;
+        cuadradoGanador = inicioJuego(dificil,cuadrados);
+        eventosCuadrado(cuadrados,cuadradoGanador);
+        mensaje.innerText = ("");
+    });
+
+
+    eventosCuadrado(cuadrados,cuadradoGanador);
+
+
+    document.getElementById("coloresNuevos").addEventListener("click", () => {
+        cuadradoGanador = inicioJuego(dificil,cuadrados);
+        eventosCuadrado(cuadrados,cuadradoGanador);
+        mensaje.innerText = ("");
+    });
+
+
+    }
+
+
+function inicio() {
+        let cuadrados = [
+            document.getElementById("cuadrado1"),
+            document.getElementById("cuadrado2"),
+            document.getElementById("cuadrado3"),
+            document.getElementById("cuadrado4"),
+            document.getElementById("cuadrado5"),
+            document.getElementById("cuadrado6")
+        ];
+        return cuadrados;
+}
+
+
+
+
+
+
+function inicioJuego(modo,cuadrados) {
+    if(modo){
+        cuadrados.forEach(cuadro => {
+            cuadro.style.display="block";
+            cuadro.style.height = "130px";
+            cuadro.style.width = "130px";
+        });
+    }else{
+        cuadrados.slice(0,3).forEach(cuadro => {
+            cuadro.style.display = "block";
+            cuadro.style.height = "150px";
+            cuadro.style.width = "150px";
+        });
+        cuadrados.slice(3).forEach(cuadro => cuadro.style.display = "none");
+        cuadrados = cuadrados.slice(0,3);
+    }
+
+    let ganador = aleatorio()
     document.getElementById("ColorAAdivinar").innerText = ( "RGB("+ganador+")");
 
-    let cuadrado1 = document.getElementById("cuadrado1");
-    let cuadrado2 = document.getElementById("cuadrado2");
-    let cuadrado3 = document.getElementById("cuadrado3");
-    let cuadrado4 = document.getElementById("cuadrado4");
-    let cuadrado5 = document.getElementById("cuadrado5");
-    let cuadrado6 = document.getElementById("cuadrado6")
-
-
-    asignaColor(cuadrado1);
-    asignaColor(cuadrado2);
-    asignaColor(cuadrado3);
-    asignaColor(cuadrado4);
-    asignaColor(cuadrado5);
-    asignaColor(cuadrado6);
-    asignaColorGanador(document.getElementById(asignaGanador()),ganador);
-
-
-
-    cuadrado1.addEventListener("click", (e)=> 
-    {
-        comprobarGanador(e.target.style.backgroundColor,ganador);
-    });
-    cuadrado2.addEventListener("click", (e)=> 
-        {
-            comprobarGanador(e.target.style.backgroundColor,ganador);
-        });
-        cuadrado3.addEventListener("click", (e)=> 
-            {
-                comprobarGanador(e.target.style.backgroundColor,ganador);
-            });
-            cuadrado4.addEventListener("click", (e)=> 
-                {
-                    comprobarGanador(e.target.style.backgroundColor,ganador);
-                });
-                cuadrado5.addEventListener("click", (e)=> 
-                    {
-                        comprobarGanador(e.target.style.backgroundColor,ganador);
-                    });
-                    cuadrado6.addEventListener("click", (e)=> 
-                        {
-                            comprobarGanador(e.target.style.backgroundColor,ganador);
-                        });
-    
-
-
+    asignaColor(cuadrados);
+    asignaColorGanador(document.getElementById(asignaGanador(cuadrados)),ganador);
+    return ganador;
 }
 
 function aleatorio()  {
@@ -59,16 +84,20 @@ function aleatorio()  {
     return aleatorio;
 }
 
-function asignaColor(id) {
-    id.style.backgroundColor = "rgb("+aleatorio()+")";
+function asignaColor(cuadrados) {
+    cuadrados.forEach(cuadrado => {
+        cuadrado.style.backgroundColor = "rgb("+aleatorio()+")";
+    });
+    
 }
 
 function asignaColorGanador(id,color) {
     id.style.backgroundColor = "rgb("+color+")";
 }
 
-function asignaGanador() {
-    let aleatorio = Math.trunc(Math.random()*5 +1);
+function asignaGanador(cuadrados) {
+    let longitud = cuadrados.length;
+    let aleatorio = Math.trunc(Math.random()*(longitud-1)+1);
     id = "cuadrado"+aleatorio;
     return id;
 }
@@ -78,7 +107,27 @@ function comprobarGanador(color,ganador) {
     ganador = "rgb("+ganador+")";
     if (color == ganador) {
         document.getElementById("mensage").innerText = ( "Has acertado!!");
+        return true;
     }else {
         document.getElementById("mensage").innerText = ( "try again!");
+        return false;
     }
+}
+
+function eventosCuadrado(cuadrados,ganador) {
+    cuadrados.forEach(cuadrado => {
+        cuadrado.addEventListener("click", (e)=> 
+            {
+                if (comprobarGanador(e.target.style.backgroundColor,ganador)) {
+                    cuadrados.forEach(cuadrado => {
+                        cuadrado.style.backgroundColor = "rgb("+ganador+")";
+                        cuadrado.style.opacity = "100%";
+                    });
+                }else {
+                    cuadrado.style.opacity = "0%";
+
+                }
+                
+            });    
+    });
 }
