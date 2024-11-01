@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JuegoColor.js"></script>
+    <style>
+        table {
+            border-collapse: separate;
+        }
+        #calculadora{
+            display: flex;
+            align-items: center;
+        }
+        table {
+            width: 500px;
+            height: 500px;
+        }
+
+        #resultado tr:first-child{
+            text-align: right;
+        }
+
+        td {
+            text-align: center;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div id="calculadora">
+        <table border="1">
+            <div id="resultado">
+                <tr>
+                    <td colspan="4">&nbsp;</td>
+                </tr>
+            </div>
+
+            <div id="operadores">
+                <tr>
+                    <td id="suma">+</td>
+                    <td id="resta">-</td>
+                    <td id="multi">x</td>
+                    <td id="divi">÷</td>
+                </tr>
+            </div>
+
+            <tr>
+            <div id="numeros">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <div id="igual">
+                    <td rowspan="4">=</td>
+                </div>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                <td>0</td>
+            </div>
+            <div id="operadores2">
+                <td>.</td>
+                <td>C</td>
+            </div>
+            </tr>
+
+            </tr>
+        </table>
+    </div>
+
+
+</body>
+</html>

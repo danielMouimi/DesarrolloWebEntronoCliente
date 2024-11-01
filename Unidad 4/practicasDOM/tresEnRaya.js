@@ -51,7 +51,6 @@ function inicio() {
 
 
 function inicioJuego(modo,cuadrados) {
-    muestraTodosLosCuadros(cuadrados);
     if(modo){
         cuadrados.forEach(cuadro => {
             cuadro.style.display="block";
@@ -115,11 +114,6 @@ function comprobarGanador(color,ganador) {
     }
 }
 
-function muestraTodosLosCuadros(cuadrados) {
-    cuadrados.forEach(cuadrado => {
-        cuadrado.style.opacity = "100%";
-    });
-}
 function eventosCuadrado(cuadrados,ganador) {
     cuadrados.forEach(cuadrado => {
         cuadrado.addEventListener("click", (e)=> 

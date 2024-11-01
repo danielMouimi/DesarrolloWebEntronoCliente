@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JuegoColor.js"></script>
+    <style>
+        body {
+            background-color: rgb(102, 181, 181);
+        }
+
+        #titulo {
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            color:white;
+        }
+
+        h1 {
+            font-size: 60px;
+            margin-top: -20px;
+            margin-bottom: -20px;
+        }
+
+        p {
+            font-size: 30px;
+        }
+
+        #cuadrados {
+            width: 100%;
+            height: 300px;
+            background-color: black;
+        }
+        .cuadra {
+            background-color: rgb(15,16,255);
+            width: 130px;
+            height: 130px;
+            border-radius: 20%;
+            margin: 10px;
+        }
+
+        #cuadrados {
+            display: flex;
+            flex-flow: column wrap;
+            align-content: center;
+        }
+
+
+        #botones {
+            width: 100%;
+            height: 30px;
+            background-color: white;
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+        }
+
+        #dif {
+            height: 30px;
+        }
+
+        button {
+            all: unset;
+            color: rgb(74, 157, 157);
+            height: 100%;
+            margin-right: 3px;
+        }
+
+        span {
+            width: 100px;
+            height: 100%;
+            margin-right: 3px;
+
+        }
+
+        button:hover {
+            background-color: rgb(102, 181, 181);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="titulo">
+        <p>THE GREAT</p>
+        <h1 id="ColorAAdivinar"></h1>
+        <p>GESSING GAME</p>
+    </div>
+
+    <div id="botones">
+        <button id="coloresNuevos">NEW COLORS</button>
+        <span id="mensage"></span>
+        <div id="dif">
+            <button id="facil" >EASY</button>
+            <button id="dificil">HARD</button>
+        </div>
+    </div>
+
+    <div id="cuadrados">
+        <div id="cuadrado1" class="cuadra"></div>
+        <div id="cuadrado2" class="cuadra"></div>
+        <div id="cuadrado3" class="cuadra"></div>
+        <div id="cuadrado4" class="cuadra"></div>
+        <div id="cuadrado5" class="cuadra"></div>
+        <div id="cuadrado6" class="cuadra"></div>
+    </div>
+
+
+</body>
+</html>
