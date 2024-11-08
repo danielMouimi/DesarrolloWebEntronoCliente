@@ -47,7 +47,6 @@ function eventosNumeros() {
                 resultado(numero1,operacion);
                 break;
             default:
-                console.log(pulsa);
                 pintarEnResultado(pulsa);
                 break;
         }
@@ -68,7 +67,7 @@ function operar() {
             numero1 += parseFloat(introducido);
             break;
         case "-":
-            numero1 -= parseFloat(introducido);
+            numero1 = parseFloat(introducido);
             break;
         case "x":
             numero1 *= parseFloat(introducido);

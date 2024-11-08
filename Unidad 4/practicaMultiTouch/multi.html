@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial de Eventos Táctiles</title>
+    <script src="multi.js"></script>
+    <link rel="stylesheet" href="multi.css" />
+
+   
+</head>
+<body onload="init();">
+    <h1>Multi-touch interaction</h1>
+    <!-- Create some boxes to test various gestures. -->
+    <div id="target1">Tap, Hold or Swipe me 1</div>
+    <div id="target2">Tap, Hold or Swipe me 2</div>
+    <div id="target3">Tap, Hold or Swipe me 3</div>
+    <div id="target4">Tap, Hold or Swipe me 4</div>
+
+    <!-- UI for logging/debugging -->
+    <button id="log" onclick="enableLog(event);">
+      Start/Stop event logging
+    </button>
+    <button id="clearlog" onclick="clearLog(event);">Clear the log</button>
+    <p></p>
+    <output></output>
+  </body>
+</html>

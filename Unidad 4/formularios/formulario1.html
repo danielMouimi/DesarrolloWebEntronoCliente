@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./formulario1.js"></script>
+    <style>
+        #errmayus {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="formulario">
+        <form>
+            <label for="mayuscula">validarMayuscula</label>
+            <input id="mayuscula" name="mayuscula">
+            <p id="errmayus"></p>
+
+            <label for="caracterEspecial">validarCaracteresEspeciales</label>
+            <input id="caracterEspecial" name="caracterEspecial">
+            <p id="errcaracter"></p>
+
+            <label for="correo">validarCorreo</label>
+            <input id="correo" name="correo">
+            <p id="errcorreo"></p>
+
+            <label for="tarjetaCredito">validarTarjetaCredito</label>
+            <input id="tarjetaCredito" name="tarjetaCredito">
+            <p id="errtarjeta"></p>
+            
+
+            <label for="longitud">validarLongitud</label>
+            <input id="longitud" name="longitud">
+            <p id="errlong"></p>
+
+            <label for="numero">validarNumero</label>
+            <input id="numero" name="numero">
+            <p id="errnumero"></p>
+
+            <input type="submit" value="Enviar">
+
+        </form>
+    </div>
+</body>
+</html>
