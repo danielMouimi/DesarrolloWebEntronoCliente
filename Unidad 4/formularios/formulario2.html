@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./formulario2.js"></script>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre">
+        <p id="errnombre" class="error"></p>
+
+        <label for="apellidos">Apellidos</label>
+        <input id="apellidos" name="apellidos">
+        <p id="errapellidos" class="error"></p>
+
+        <label for="dni">DNI</label>
+        <input id="dni" name="dni">
+        <p id="errdni" class="error"></p>
+
+        <label for="telefono">Telefono</label>
+        <input id="telefono" name="telefono">
+        <p id="errtelefono" class="error"></p>
+
+        <label for="correo">validarCorreo</label>
+        <input id="correo" name="correo">
+        <p id="errcorreo" class="error"></p>
+
+        <label for="nombreusu">Nombre de ususario</label>
+        <input id="nombreusu" name="nombreusu">
+        <p id="errusuario" class="error"></p>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

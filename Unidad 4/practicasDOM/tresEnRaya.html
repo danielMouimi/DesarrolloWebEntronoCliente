@@ -4,52 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./JuegoColor.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&display=swap" rel="stylesheet">
+    <script src="./tresEnRaya.js"></script>
     <style>
-        body {
-            background-color: aqua;
+        table {
+            border-collapse: collapse;
         }
-        #cuadrados {
-            width: 100%;
-            height: 300px;
-            background-color: black;
+        #pagina{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        .cuadra {
-            background-color: rgb(15,16,255);
-            width: 130px;
-            height: 130px;
-            border-radius: 20%;
-            margin: 10px;
+        table {
+            width: 500px;
+            height: 500px;
+            border-spacing: 15px;
+            background-color: rgb(43, 105, 155);
+            color: white;
+            border-radius: 5%;
+            border-color: white;
+            font-family: "Playwrite BE VLG";
         }
 
-        #cuadrados {
-            display: flex;
-            flex-flow: column wrap;
-            align-content: center;
+
+
+        td {
+            text-align: center;
+            width: 100px;
+            height: 100px;
         }
     </style>
 </head>
 <body>
-    <div id="titulo">
-        <p>THE GREAT</p>
-        <h1 id="ColorAAdivinar"></h1>
-        <p>GESSING GAME</p>
-    </div>
-
-    <div id="botones">
-        <button id="coloresNuevos">NEW COLORS</button>
-        <span id="mensage"></span>
-        <button id="facil">FACIL</button>
-        <button id="dificil">HARD</button>
-    </div>
-
-    <div id="cuadrados">
-        <div id="cuadrado1" class="cuadra"></div>
-        <div id="cuadrado2" class="cuadra"></div>
-        <div id="cuadrado3" class="cuadra"></div>
-        <div id="cuadrado4" class="cuadra"></div>
-        <div id="cuadrado5" class="cuadra"></div>
-        <div id="cuadrado6" class="cuadra"></div>
+    
+    <div id="pagina">
+        <h1 id="mensaje"></h1>
+    <table id="tablero" border= 1>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
     </div>
 
 

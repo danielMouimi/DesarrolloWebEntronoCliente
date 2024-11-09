@@ -6,8 +6,8 @@
     <title>Document</title>
     <script src="./formulario1.js"></script>
     <style>
-        #errmayus {
-            border-color: red;
+        .error {
+            color: red;
         }
     </style>
 </head>
@@ -16,28 +16,28 @@
         <form>
             <label for="mayuscula">validarMayuscula</label>
             <input id="mayuscula" name="mayuscula">
-            <p id="errmayus"></p>
+            <p id="errmayus" class="error"></p>
 
             <label for="caracterEspecial">validarCaracteresEspeciales</label>
             <input id="caracterEspecial" name="caracterEspecial">
-            <p id="errcaracter"></p>
+            <p id="errcaracter" class="error"></p>
 
             <label for="correo">validarCorreo</label>
             <input id="correo" name="correo">
-            <p id="errcorreo"></p>
+            <p id="errcorreo" class="error"></p>
 
             <label for="tarjetaCredito">validarTarjetaCredito</label>
             <input id="tarjetaCredito" name="tarjetaCredito">
-            <p id="errtarjeta"></p>
+            <p id="errtarjeta" class="error"></p>
             
 
             <label for="longitud">validarLongitud</label>
             <input id="longitud" name="longitud">
-            <p id="errlong"></p>
+            <p id="errlong" class="error"></p>
 
             <label for="numero">validarNumero</label>
             <input id="numero" name="numero">
-            <p id="errnumero"></p>
+            <p id="errnumero" class="error"></p>
 
             <input type="submit" value="Enviar">
 

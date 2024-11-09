@@ -19,9 +19,8 @@ function inicio() {
 function eventosNumeros() {
         
 
-    document.getElementById("calculadora").addEventListener("click",(e)=> {
-    
-        e.stopPropagation();
+    document.getElementById("calc").addEventListener("click",(e)=> {
+
         pulsa = e.target.innerText;
         switch (pulsa) {
             case "+":
@@ -34,7 +33,7 @@ function eventosNumeros() {
                 break;
             case "x":
                 operacion = "x";
-                operar();
+                numero1 = operar();
                 break;
             case "÷":
                 operacion = "÷";
@@ -45,6 +44,8 @@ function eventosNumeros() {
                 break;
             case "=":
                 resultado(numero1,operacion);
+                numero1 = null;
+                operacion = null;
                 break;
             default:
                 pintarEnResultado(pulsa);
@@ -70,14 +71,15 @@ function operar() {
             numero1 = parseFloat(introducido);
             break;
         case "x":
-            numero1 *= parseFloat(introducido);
+            numero1 = parseFloat(introducido);
             break;
         case "÷":
-            numero1 /= parseFloat(introducido);
+            numero1 = parseFloat(introducido);
             break;
     }
 
     document.getElementById("resultado").innerText = ("");
+    return numero1;
 }
 
 function resultado(numero1,operacion) {
@@ -95,7 +97,7 @@ function resultado(numero1,operacion) {
             break;
         case "x":
             
-            result = parseFloat(numero1)  * parseFloat(numero2);
+            result = (parseFloat(numero1)) * (parseFloat(numero2));
             break;
         case "÷":
             

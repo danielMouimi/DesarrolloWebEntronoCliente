@@ -10,20 +10,33 @@
             border-collapse: separate;
         }
         #calculadora{
+            width: 100vw;
+            height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
         table {
             width: 500px;
             height: 500px;
+            border-spacing: 15px;
         }
 
-        #resultado tr:first-child{
-            text-align: right;
-        }
+
 
         td {
             text-align: center;
+        }
+
+        tr:nth-child(2){
+            background-color: rgb(162, 162, 162);
+        }
+        #igual {
+            background-color: rgb(130, 158, 219);
+        }
+
+        #resultado {
+            height: 80px;
         }
 
        
@@ -31,10 +44,10 @@
 </head>
 <body>
     <div id="calculadora">
-        <table border="1">
+        <table border="1" id="calc">
             <div id="result">
                 <tr>
-                    <td colspan="4" id="resultado">&nbsp;</td>
+                    <td colspan="4" id="resultado"></td>
                 </tr>
             </div>
 
