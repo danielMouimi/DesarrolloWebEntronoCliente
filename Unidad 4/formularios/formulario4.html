@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./formulario3.js"></script>
+    <style>
+        body {
+            margin: 0;
+            color: rgb(49, 49, 49);
+        }
+
+
+        #contenedor {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            background: radial-gradient(farthest-corner circle at left top,  rgb(217, 78, 255), #5100ff );
+            justify-content: center;
+            align-items: center;
+        }
+        #imagen, #formulario {
+            width: 40%;
+            height: 80vh;
+        }
+        #imagen {
+            background-image: url("./imagenform4.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+        }
+        #formulario {
+            background-color: white;
+        }
+
+        table {
+            width: 100%;
+            border-spacing: 20px;
+        }
+
+        .boton {
+            margin: 20px;
+            width: 125px;
+            height: 40px;
+            background-color: rgb(107, 154, 255);
+            color: white;
+            font-weight: bold;
+            border: 0;
+            border-radius: 5%;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="imagen">
+            <div class="texto"><h2>Crowdrise</h2></div>
+            <div class="copy">Copyright</div>
+        </div>
+
+        <div id="formulario">
+            <h2>Welcome to Crowdrise</h2>
+            <p>Lets get you all set up so you con verify your nonprofit and begin setting up your first campaign!</p>
+
+            Alredy have an account? <a href="">Log in.</a>
+
+
+            <form>
+                <table >
+                    <tr>
+                        <td>
+                            <label for="nombre">First Name</label>
+                            <br>
+                            <input id="nombre" name="nombre" placeholder="Peter" type="text">
+                        </td>
+
+                        <td>
+                            <label for="apellidos">Last Name</label>
+                            <br>
+                            <input id="apellidos" name="apellidos" placeholder="Deltondo" type="text">
+                        </td>   
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="telefono">Phone</label>
+                            <br>
+                            <input id="telefono" name="telefono" placeholder="949-867-5309" type="text">
+                        </td>
+                        <td>
+                            <label for="correo">Email</label>
+                            <br>
+                            <input id="correo" name="correo" placeholder="pdeltondo@crowdise.com" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="contraseña">Password</label>
+                            <br>
+                            <input id="contraseña" name="contraseña" placeholder="xxxxxxxxx" type="password">
+                        </td>
+                        <td>
+                            <label for="Ccontraseña">Confirm Password</label>
+                            <br>
+                            <input id="Ccontraseña" name="Ccontraseña" placeholder="xxxxxxxxx" type="password">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" id="emails" name="emails"><label for="emails">Yes, I want to recieve Crowdises emails</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" id="terminos" name="terminos"><label for="terminos">I agree to the <a href="">Terms, Privacy Policy</a> and <a href="">Fees</a></label>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <input type="submit" value="Sign Up" class="boton">
+                
+            </form>
+
+        Dont work for a nonprofit? <a href="">You can still foundraise for one.</a>
+
+        </div>
+    </div>
+</body>
+</html>

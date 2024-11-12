@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./formulario3.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        #formulario {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #da786f;
+        }
+
+        form {
+            text-align: center;
+            color: #ffdede;
+        }
+        .entrada {
+            background: none;
+            border: none;
+            border-bottom: 3px solid #f5f7dc;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+        }
+        .entrada::placeholder {
+            color: white;
+            opacity: 50%;
+        }
+
+
+
+
+    .boton {
+      background-color: #f2b0b0;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .error {
+        color: rgb(161, 11, 11);
+    }
+
+    </style>
+</head>
+<body>
+    <div id="formulario">
+    <form>
+        <input id="nombre" name="nombre" placeholder="username" class="entrada">
+        <ul>
+            <li>1 lowercase character <span id="error" class="error"></span></li>
+            <li>1 uppercase character <span id="error1" class="error"></span></li>
+            <li>6 minimum characters <span id="error2" class="error"></span></li>
+        </ul>
+
+        <input type="submit" value="submit" class="boton">
+    </form>
+    </div>
+</body>
+</html>
