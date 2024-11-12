@@ -1,31 +1,99 @@
 
-function valnombre(nombre) {
+function valnombre() {
     var nombre = document.getElementById("nombre");
-    const low = /[a-z]+/;
-    const upp = /[A-Z]+/;
-    const car = nombre.value.length >=6;
-    
-        errorlow = document.getElementById("error");
-        errorupp = document.getElementById("error1");
-        errorcar = document.getElementById("error2");
+    const nom = /[a-zA-Z]+/;
         
-        if (!low.test(nombre.value)) {
-            errorlow.innerText = ("x");
+        if (!nom.test(nombre.value)) {
+            nombre.style.borderColor = "red";
         }else {
-            errorlow.innerText = ("");
-        } 
-        
-        if (!upp.test(nombre.value)){
-            errorupp.innerText = ("x");
-        }else {
-            errorupp.innerText = ("");
-        }   
-        if (!car) {
-            errorcar.innerText = ("x");
-        }else {
-            errorcar.innerText = ("");
+            nombre.style.borderColor = "green";
         }
 }
+
+
+function valapellidos() {
+    var nombre = document.getElementById("apellidos");
+    const nom = /[a-zA-Z]+/;
+        
+        if (!nom.test(nombre.value)) {
+            nombre.style.borderColor = "red";
+        }else {
+            nombre.style.borderColor = "green";
+        }
+}
+
+function valtelefono() {
+    var nombre = document.getElementById("telefono");
+    const tel = /[0-9]{3}[-]{1}[0-9]{3}[-]{1}[0-9]{4}/;
+        
+        if (!tel.test(nombre.value)) {
+            nombre.style.borderColor = "red";
+        }else {
+            nombre.style.borderColor = "green";
+        }
+}
+
+
+
+
+function valCorreo() {
+    const correo = document.getElementById("correo");
+    
+    correo.addEventListener("blur", (e) => {
+        const cor = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!cor.test(correo.value)) {
+            e.target.style.borderColor = "red";
+        }else {
+            e.target.style.borderColor = "green";
+        }
+    });
+}
+
+
+function valcontraseña() {
+    var contraseña = document.getElementById("contraseña");
+    const contraseña2 = document.getElementById("Ccontraseña");
+    const contr = /^(?=.*\d)(?=.*[!@#$%^&*.,;:])[A-Za-z\d!@#$%^&*.,;:]{8,}$/;
+
+
+    contraseña.addEventListener("blur", () => {
+        if (!contr.test(contraseña.value)) {
+            e.target.style.borderColor = "red";
+        }else {
+            e.target.style.borderColor = "green";
+        }
+    }
+
+
+    contraseña2.addEventListener("input", () => {
+        if (contraseña.value != contraseña2.value) {
+            e.target.style.borderColor = "red";
+        }else {
+            e.target.style.borderColor = "green";
+        }
+    }
+
+                                
+
+                                
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 window.onload = ()=> {
