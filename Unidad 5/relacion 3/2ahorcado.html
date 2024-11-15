@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./2ahorcado.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        #contenedor {
+            height: 100vh;
+            display: flex;
+            background-color: rgb(193, 215, 47);
+            color: white;
+
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #texto {
+            text-align: center;
+        }
+        #cronometrar {
+            font-size: 70px;
+        }
+
+        button {
+            all: unset;
+            height: 100px;
+            width: 300px;
+            border: 2px solid white;
+            border-radius: 5%;
+            text-align: center;
+            margin: 20px;
+        }
+
+        button:hover {
+            background-color: rgba(135, 135, 135, 0.712);
+            border: none;
+            color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="texto">
+            <p class="titulo">HANGMAN </p>
+            <p class="subtitulo">VANILLA JAVASCRIPT HANGMAN GAME</p>
+        </div>
+
+        <div class="letras">
+            <p>Use the alphabet below to guess the word, or click hint to get a clue</p>
+            <table>
+                <tr>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                    <td>F</td>
+                    <td>G</td>
+                    <td>H</td>
+                    <td>I</td>
+                    <td>J</td>
+                    <td>K</td>
+                    <td>L</td>
+                    <td>M</td>
+                    <td>N</td>
+                    <td>O</td>
+                    <td>P</td>
+                    <td>Q</td>
+                    <td>R</td>
+                    <td>S</td>
+                    <td>T</td>
+                    <td>U</td>
+                    <td>V</td>
+                    <td>W</td>
+                    <td>X</td>
+                    <td>Y</td>
+                    <td>Z</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="pista">
+            <button id="botonPista">HINT</button>
+        </div>
+        <div id="class">
+            <p id="ahorcado"></p>
+        </div>
+        <div class="vidas">
+            <p id="vidas"></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./2ahorcado.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        #contenedor {
+            height: 100vh;
+            display: flex;
+            background-color: rgb(237, 168, 29);
+            color: white;
+
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #texto {
+            text-align: center;
+            font-size: 70px;
+            height: 300px;
+        }
+        #cronometrar {
+            font-size: 70px;
+        }
+
+        button {
+            all: unset;
+            height: 100px;
+            width: 300px;
+            border: 2px solid white;
+            border-radius: 5%;
+            text-align: center;
+            margin: 20px;
+        }
+
+        button:hover {
+            background-color: rgba(135, 135, 135, 0.712);
+            border: none;
+            color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="texto">
+            <p>STOPWATCH </p><p>VANILLA JAVASCRIPT STOPWATCH</p>
+        </div>
+        <div id="cronometrar">
+            <p id="cronometro">00:00</p>
+        </div>
+        <div id="botones">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+</body>
+</html>
