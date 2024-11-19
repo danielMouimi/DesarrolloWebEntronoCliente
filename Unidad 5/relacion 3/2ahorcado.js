@@ -1,8 +1,14 @@
 
-var palabra = "P E S O P L U M A";
-var palabraSeparada = palabra.split(" ");
+var palabra = "JOSE";
+var formateado = palabra.replace(/([a-zA-Z])/g, ' $1').trim();
+formateado = formateado.replace(/  +/g, ' ');
+
+var palabraSeparada = formateado.split(" ");
 var vidas = 10;
 var letraSeleccionada = "";
+
+var clicado = false;
+var perdido = false;
 
 
 function imprimirpalabra() {
@@ -12,15 +18,33 @@ function imprimirpalabra() {
 }
 
 function imprimirvidas() {
-    document.getElementById("vidas").innerText = ("You have"+vidas+" lives");
+    let divVidas = document.getElementById("vidas");
+    divVidas.innerText = ("You have"+vidas+" lives");
+    if (vidas < 3 ) {
+        divVidas.style.color = "red";
+        divVidas.style.fontWeight = "bold";
+    }
+    if (vidas == 0) {
+        perdido = true;
+    }
+
 }
 
 function eventosletra() {
-    let tabla = document.getElementsByTagName("table")[0];
+    let tabla = document.getElementsByTagName("tr")[0];
 
     tabla.addEventListener("click", (e)=> {
         letraSeleccionada = e.target.innerText;
+
+        if (e.target.style.color == "white") {
+            clicado = true;
+        }else {
+            clicado = false;
+        }
+
         comprobarLetraSeleccionada();
+        e.target.style.backgroundColor = "black";
+        e.target.style.color = "white";
     });
 
 }
@@ -39,9 +63,25 @@ function comprobarLetraSeleccionada() {
           document.getElementById("ahorcado").innerText = (ahorcado.join(" "));
 
     }else {
+        if (!clicado) {
         vidas--;
         imprimirvidas();
+        }
     }
+}
+
+function activarPista() {
+    let boton = document.getElementById("botonPista");
+
+    boton.addEventListener("click", (e)=> {
+        let nuevoP = document.createElement("p");
+
+        nuevoP.innerText = ("La categoria es profesores de DAW");
+
+
+        e.target.parentElement.appendChild(nuevoP);
+        e.target.parentElement.removeChild(boton);
+    });
 }
 
 
@@ -49,6 +89,7 @@ window.onload = ()=> {
     imprimirpalabra();
     imprimirvidas();
     eventosletra();
+    activarPista();
 }
 
 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./pong.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #contenedor {
+            border: 5px solid black;
+        }
+        svg text {
+            font-size: 40px;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+<body>
+    <svg id="contenedor" width="1300" height="700">
+        <text x="300" y="50">0</text>
+        <text x="650" y="50">:</text>
+        <text x="1000" y="50">0</text>
+
+        <rect width="30" height="120" rx="1mm" ry="1mm" style="fill: blue; stroke: black; stroke-width: 1mm;"
+        x="70" y="300" id="jugador1" class="rectangulo"/>
+
+        <rect width="30" height="120" rx="1mm" ry="1mm" style="fill: blue; stroke: black; stroke-width: 1mm;"
+        x="1230" y="300" id="jugador2" class="rectangulo"/>
+
+    </svg>
+</body>
+</html>
