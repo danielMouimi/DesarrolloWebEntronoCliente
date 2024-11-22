@@ -1,11 +1,11 @@
 class Bola {
-    constructor(getele, X, Y, R, velocidadx, velocidady) {
+    constructor(getele) {
         this.getele = getele;
-        this.X = X;
-        this.Y = Y;
-        this.velocidadx = velocidadx;
-        this.velocidady = velocidady;
-        this.R = R;
+        this.X = parseInt(getele.getAttribute("cx"));
+        this.Y = parseInt(getele.getAttribute("cy"));
+        this.velocidadx = 10;
+        this.velocidady = 7;
+        this.R = parseInt(getele.getAttribute("r"));
     }
     setattx(x) {
         this.getele.setAttribute("cx", x);
@@ -18,10 +18,10 @@ class Bola {
 class Rectangulo {
     constructor(getele, X, Y, ancho, alto) {
         this.getele = getele;
-        this.X = X;
-        this.Y = Y;
-        this.ancho = ancho;
-        this.alto = alto;
+        this.X = parseInt(getele.getAttribute("x"));
+        this.Y = parseInt(getele.getAttribute("y"));
+        this.ancho = parseInt(getele.getAttribute("width"));
+        this.alto = parseInt(getele.getAttribute("height"));
         this.movimiento = 0; 
     }
     setatty(y) {
@@ -37,26 +37,27 @@ function inicio() {
     const jugador1 = document.getElementById("jugador1");
     const jugador2 = document.getElementById("jugador2");
 
-    const objetoP = new Bola(pelota, 650, 350, 30, 10, 7);
-    const rectangulo1 = new Rectangulo(jugador1, 0, 300, 20, 120);
-    const rectangulo2 = new Rectangulo(jugador2, 1280, 300, 20, 120);
+    const objetoP = new Bola(pelota);
+    const rectangulo1 = new Rectangulo(jugador1);
+    const rectangulo2 = new Rectangulo(jugador2);
 
     agregarEventos(rectangulo1, rectangulo2);
     setInterval(() => {
-    movimientoPelota(objetoP, paredY);
+   
     moverRectangulos(rectangulo1, rectangulo2, paredY);
-
+    
     if (detectarColision(objetoP, rectangulo1) || detectarColision(objetoP, rectangulo2)) {
         if (objetoP.velocidadx < 20) {
-        objetoP.velocidadx *= -1.08; // Invertir dirección en X si hay colisión
+            objetoP.velocidadx *= -1.08; // Invertir dirección en X si hay colisión
         }else {
             objetoP.velocidadx *= -1;
         }
     }
 
+    movimientoPelota(objetoP, paredY);
+
     },30);
 }
-
 function movimientoPelota(objetoP, limiteY) {
     
         objetoP.X += objetoP.velocidadx;
@@ -162,9 +163,8 @@ function comprobarGameOver(objetoP) {
         objetoP.X = 650;
         objetoP.Y = 350;
 
-        objetoP.velocidadx *= -1;
+        objetoP.velocidadx = -10;
 
-        objetoP.velocidadx = 10;
         mover(objetoP);
     } else if ((objetoP.X - objetoP.R) < 0) { 
         let puntos2 = parseInt(document.getElementById("puntos2").textContent);
@@ -174,9 +174,8 @@ function comprobarGameOver(objetoP) {
         objetoP.X = 650;
         objetoP.Y = 350;
 
-        objetoP.velocidadx *= -1;
-
         objetoP.velocidadx = 10;
+        
         mover(objetoP);
     }
 }

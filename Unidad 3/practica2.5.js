@@ -1,3 +1,6 @@
+
+
+function paresImpares() {
 let numeros = [];
 
 for (let i = 0; i<100;i++){
@@ -13,3 +16,4 @@ numeros.sort((a,b) => {
     return 0;
 });
 console.log(numeros);
+}

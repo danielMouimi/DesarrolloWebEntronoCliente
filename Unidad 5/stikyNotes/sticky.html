@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./sticky.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        #contenedor {
+            width: calc(100vw);
+            height: calc(100vh);
+            background-image: url("imagenes/tablero.png");
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="creadorNotas">
+            <form>
+                <label for="tituloNota">Titulo De la nota</label>
+                <input type="text" name="tituloNota" id="tituloNota">
+                <button>Crear Nota</button>
+            </form>
+        </div>
+        <div id="sitioNotas">
+
+        </div>
+    </div>
+</body>
+</html>
