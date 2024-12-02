@@ -16,20 +16,80 @@
             background-position: center;
             background-size: cover;
         }
+        #creadorNotas {
+            background-image: none;
+            width: 20em;
+            height: 20em;
+            background-color: rgb(255, 186, 90);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            border-radius: 10%;
+        }
+        input {
+            margin-bottom: 40px;
+            margin-top: 10px;
+        }
+
+        label {
+         
+            font-weight: bold;
+            font-size: 2em;
+        }
+
+        button {
+            all: unset;
+            width: 50%;
+            height: 50px;
+            color: white;
+            font-size: 1.2em;
+            background-color: rgb(123, 66, 66);
+            border: 1px solid white;
+            transition: all 0.5s;
+        }
+
+        button:hover {
+            background-color: rgb(235, 175, 175);
+            border-color: black;
+            color: black;
+            transition: all 0.5s;
+        }
+
+        input {
+            width: 80%;
+            height: 25px;
+            background-color: brown;
+            color: white;
+            border-color: white;
+        }
+        ::placeholder {
+            color: white;
+            opacity: 80%;
+        }
+
+        #contenedor div {
+            width: 15em;
+            height: 17em;
+            background-image: url("./imagenes/posttit.png");
+            background-position: center;
+            background-size: cover;
+        }
+
     </style>
 </head>
 <body>
     <div id="contenedor">
-        <div id="creadorNotas">
-            <form>
-                <label for="tituloNota">Titulo De la nota</label>
-                <input type="text" name="tituloNota" id="tituloNota">
-                <button>Crear Nota</button>
-            </form>
-        </div>
-        <div id="sitioNotas">
-
-        </div>
+        <section id="creadorNotas">
+            
+                <label for="tituloNota">Titulo de la nota:</label>
+                
+                <input type="text" placeholder="Titulo" name="tituloNota" id="tituloNota">
+                
+                <button id="crear">Crear Nota</button>
+            
+        </section>
     </div>
 </body>
 </html>

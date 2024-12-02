@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./pruebaDetalle.js"></script>
+    <style>
+
+        #contenedor {
+            background-color: black;
+        }
+
+        .contenedorgeneral {
+            position: absolute;
+        }
+        
+
+        .detalle {
+            background-color: rgba(255, 0, 0, 0.26);
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0%;
+            transition: all 1s;
+        }
+        .detalle div {
+            width: 30%;
+            padding: 5%;
+            background: radial-gradient(farthest-corner circle at left top,  rgb(217, 78, 255), #5100ff );
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <button id="boton">Click</button>
+        </div>
+
+    <div class="contenedorgeneral">
+    <svg id="contenedor" width="1300" height="700">
+        <text id="puntos1" x="300" y="50">0</text>
+        <text x="650" y="50">:</text>
+        <text id="puntos2" x="1000" y="50">0</text>
+
+        <rect width="20" height="120" rx="1mm" ry="1mm" style="fill: blue; stroke: black; stroke-width: 1mm;"
+        x="0" y="300" id="jugador1" class="rectangulo"/>
+
+        <rect width="20" height="120" rx="1mm" ry="1mm" style="fill: blue; stroke: black; stroke-width: 1mm;"
+        x="1280" y="300" id="jugador2" class="rectangulo"/>
+
+        <circle r="30" cx="650" cy="350" style="fill: gray; stroke: black; stroke-width: 1mm;" id="pelota" class="rectangulo"/>
+
+    </svg>
+
+
+
+</div>
+<div class="detalle" id="detalle">
+        <div>
+            <h1>Titulo pelicula</h1>
+            <h2>descripcion tal tal tal</h2>
+            <p>informacion en general</p>
+        </div>
+</div>
+</body>
+</html>
