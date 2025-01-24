@@ -1,0 +1,9 @@
+.square {
+  width: 40vw;
+  height: 40vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+}

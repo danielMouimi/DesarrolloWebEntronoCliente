@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div id="contenedor">
+        <h1>Grocery Bud</h1>
+        <div id="introduccion">
+       
+                <input id="intro" placeholder="example: eggs" v-model="content">
+                <button v-on:click="add"id="introbtn">Submit</button>
+            
+        </div>
+        <div id="lista">
+            <ul id="list">
+                <li v-for="elemento in lista">{{ elemento }}</li>
+            </ul>
+        </div>
+        <button v-on:click="remove"id="borrarLista">Clear Items</button>
+    </div>
+</body>
+</html>
