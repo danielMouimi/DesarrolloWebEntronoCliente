@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Socket.IO chat</title>
+    <script src="/socket.io/socket.io.js">
+
+    </script>
+        <script>
+      
+          window.onload = ()=> {
+              const socket = io();
+              let input = document.getElementById("input");
+              let btnEnviar = document.getElementById("mandar");
+              let btnEnviarImg = document.getElementById("mandarImg");
+              const mensajes = document.getElementById("messages");
+              let miNombre = prompt("dime tu nombre");
+
+              socket.emit("nombre", miNombre);
+
+
+              btnEnviar.addEventListener("click", (e) => {
+                 let envioDatos = {
+                   nombre: miNombre,
+                   mensaje: mensaje
+                 }
+              socket.emit('mensaje', envioDatos);
+              input.value = "";
+              });
+
+              btnEnviarImg.addEventListener("click", (e) => {
+              socket.emit('img', input.value);
+              input.value = "";
+              });
+
+  
+              socket.on("texto", (datos)=> {
+                console.log("recibo mensaje "+datos);
+                const mensajes = document.getElementById("messages");
+                mensajes.innerHTML += "<li>"+datos+"</li>";
+              })
+              socket.on("img", (datos)=> {
+                console.log("recibo mensaje "+datos);
+                mensajes.innerHTML += "<li> <img src='"+datos+"'/></li>";
+              })
+
+              socket.on("nuevaConexion",(nombre)=> {
+                mensajes.innerHTML += "<li><i>"+nombre+" se ha conectado</i></li>"
+              });
+              socket.on("desconexion", (nombre)=>{
+                mensajes.innerHTML += "<li><i>"+nombre+" se ha desconectado</i></li>"
+              })
+            }
+          
+        
+      </script>
+
+    <style>
+      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+      #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+      #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+      #input:focus { outline: none; }
+      #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages > li { padding: 0.5rem 1rem; }
+      #messages > li:nth-child(odd) { background: #efefef; }
+    </style>
+
+  </head>
+  <body>
+    Pagina principal con socket
+    <ul id="messages"></ul>
+    <div id="form">
+      <input id="input" autocomplete="off" />
+      <button id="mandar">Send</button>
+      <!-- <input type="file" name="fileToUpload" id="fileToUpload" multiple> -->
+      <button id="mandarImg">MandarImagen</button>
+    </div>
+      <ul id="messages">
+
+      </ul>
+
+  </body>
+</html>
